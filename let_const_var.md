@@ -1,7 +1,7 @@
 # JavaScript Variable Declarations: let, const, and var
 ## Differences between let, const, and var
 # 1. var
-- **Global or Function Scoped:** variables declared with var are global or functional scoped, meaning the scope is global when var variable is declared outside a function or scope is function when it is declared within a function.
+- **Global or Function Scoped:** var variables are either global or funtional scoped, which means that when they are declared outside of a function, their scope is global, and when they ay declared inside a function, their scope is function.
 - example: [global-function-scope-example](https://www.freecodecamp.org/news/scope-in-javascript-global-vs-local-vs-block-scope/)
 ```ruby
 #variables declared in global scope
@@ -21,7 +21,7 @@ function myFunction () {
 
 myFunction();
 ```
-- **Update and re-declare:** var variables can be updated and redeclared within the same scope.
+- **Update and re-declare:** within the same scope, var variables can be updated abd re-declared.
 ```ruby
 var x = 15;
 #re-declare the var variable
@@ -35,7 +35,7 @@ console.log(x);
 console.log (name);
 var name = "isha";
 ```
-- **Declaration and initialization:** it can be declare without initialization and it can be accessed without initialization as its default value is "undefined."
+- **Declaration and initialization:** both declaring and accessing it are possible without initialization because its default value is "undefines."
 ```ruby
 #declare without initialization
 var x;
@@ -48,7 +48,7 @@ console.log(x);
 ```
 
 # 2. let
-- **Block Scope:** variables declared with let is a block scoped, meaning it is only accessible within the block{} where it is declared.
+- **Block Scope:** let-declared variables are block scoped, which means they can only be accessed inside the block {} in which they are declared.
 ```ruby
 {
 let num = 02;
@@ -56,7 +56,7 @@ let num = 02;
 console.log(num)
 }
 ```
-- **Update but no re-declared:** a variable declared with let can be updated within its scope but cannot be re-declared.
+- **Update but no re-declared:** although it cannot be re-declared, a variable declared with let can be updated within its scope.
 ```ruby
 let name = "isha";
 name = "isha"; #updating a variable declared with let
@@ -68,12 +68,12 @@ let name = "isha";
 let name = "mae"; #error: Identifier 'name' has already been declared
 console.log(name);
 ```
-- **Hoisting:** let are hoisted but stay in the temporal dead zone (tdz) until the initialization.
+- **Hoisting:** let are hoisted, but until the initialization they stay in the temporal dead zone (tdz);
 ```ruby
 console.log(name);
 let name = "isha";
 ```
-- **Declaration and initialization:** it can be declared without initialization but it cannot be accessed without initialization otherwise it will give 'referenceError'.
+- **Declaration and initialization:** it can be declared without initialization, however if its is not accessed, a 'referenceError' will be displayed.
 ```ruby
 #declare without initialization
 let x;
@@ -86,16 +86,16 @@ console.log(x);
 ```
 
 # 3. const
-- **Block scope:** variables declared with let is a block scoped, meaning it is only accessible within the block{} where it is declared.
+- **Block scope:** const-declared variables are block scope, which means they can only be accessed inside the block {} in which they are defines.
 ```ruby
 {
   const num = 2;
   console.log(num);
 }
 ```
-- **Neither updated or re-declared:** this means that the value of a variable declared with const remains the same within its scope.
-- **Hoisting:** const are hoisted to the top but stays in the temporal dead zone (tdz) until the initialization.
-- **Declaration and initialization:** it cannot be accessed without initialization as it cannot be declared without initialization.
+- **Neither updated nor re-declared:** this means that a variable's value stay constant or keeps the same within the scope of a variable declare with const.
+- **Hoisting:** const are hoisted to the top, but until initialization, they stays in the temporal dead zone (tdz).
+- **Declaration and initialization:** just as it cannot be declared without initialization, it cannot be accesses without initialization either.
 - ```ruby
   console.log(num);
   const num = 2;
